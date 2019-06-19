@@ -17,25 +17,31 @@
 
   <span class="fill-remaining-space"></span>
 
+  <span *ngIf="auth.userInfo">{{ auth.userInfo.name }} |</span>
+
   <a routerLink="/" mat-button id="nav-about-option" (click)="onAboutAnchorClick()"
     *ngIf="this.router.url === '/'"
   >
     O stronie
   </a>
 
-  <a routerLink="/user-panel" mat-button id="nav-about-option">
+  <a routerLink="/user-panel" mat-button id="nav-about-option" *ngIf="auth.userInfo">
     Dashboard
   </a>
 
-  <a routerLink="/profile" mat-button id="nav-about-option">
+  <a routerLink="/profile" mat-button id="nav-about-option" *ngIf="auth.userInfo">
     Profil
   </a>
 
-  <a routerLink="/login" mat-button>
+  <a routerLink="/" mat-button (click)="onLogoutButtonClick()" *ngIf="auth.userInfo">
+    Wyloguj
+  </a>
+
+  <a routerLink="/login" mat-button *ngIf="!auth.userInfo">
     Logowanie
   </a>
 
-  <a routerLink="/register" mat-button>
+  <a routerLink="/register" mat-button *ngIf="!auth.userInfo">
     Rejestracja
   </a>
 

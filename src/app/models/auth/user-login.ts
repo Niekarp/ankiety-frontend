@@ -5,6 +5,7 @@ export class UserLogin
 		// public name = '',
 		// public surname = '',
 		public username = '',
-		public password = ''
+		public password = '',
+		public grant_type = 'password'
 	) { };
 }
