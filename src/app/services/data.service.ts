@@ -13,7 +13,7 @@ export class DataService
 
 	private getObjectUrl(type: Function): string
 	{
-		return this.api.baseUrl + '/' + type.name.toLowerCase();
+		return this.api.baseUrl + '/' + type.name.toLowerCase() + 's';
 	}
 
 	private getObjectUrlWithId(object: Object): string
