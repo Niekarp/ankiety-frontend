@@ -1,81 +1,76 @@
 <div id="user-panel-container" fxLayout="row">
 	<div id="left-panel"  fxFlex="25%">
-			
-					<div  id="form-container" fxLayout="column wrap" fxLayoutGap="1px grid" >
-					<!-- <div id="img" style='height: 100%; width: 100%; object-fit: contain'><img src="../../../assets/images/user-panel/user-test-image.jpg"></div>  -->
-					<div matTooltip="Przejdź do profilu" (click)="redirect(profile)" id="img" 
-    style="background-image: url('../../../assets/images/home/user.png'); 
-    background-size: cover; background-position: center; padding: 10px;">
-</div>
-					<div id="user-row" fxLayout="column" fxLayoutGap="1px">
-						<p id="user-hint">Imie</p>
-						<p id="user-display">{{model.displayName}}</p>
-					</div>
-					<div id="user-row" fxLayout="column" fxLayoutGap="1px">
-						<p id="user-hint">E-mail</p>
-						<p id="user-display">{{model.email}}</p>
-					</div>
-					<div id="user-row" fxLayout="column" fxLayoutGap="1px">
-
-						<p id="user-hint">Data dołączenia</p>
-						<p id="user-display">{{model.dateOfDeletion| date:'longDate'}}</p>
-					</div>
-
-						
-					
-						
-					</div>
-				  
-				  
-
-	</div>
-	<div id="right-panel" fxFlex="75%">
-		<div fxLayout="row">
-		<mat-form-field id="search-field" appearance="outline">
-					<input matInput [(ngModel)]="searchText" type="text" placeholder="WYSZUKAJ..." name="name">
-				</mat-form-field>
-<div matTooltip="Stwórz ankietę" (click)="redirecto(profile)" id="add_ico" style="background-image:url('../../../assets/images/home/plus.svg'); " ></div>
-</div>
-		<div>		
-		  	<mat-tab-group >
-						<mat-tab label="Tworzone">
-						  <ng-template matTabContent>
-								<mat-card id="surveys-container">
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-									
-									
-									</mat-card>
-						  </ng-template>
-						</mat-tab>
-						<mat-tab label="Trwające">
-						  <ng-template matTabContent>
-								<mat-card id="surveys-container">
-										<app-panel-survey-item class="survey-grid-item" *ngFor="let survey of (surveys | search: searchText)"  >{{survey.title}}</app-panel-survey-item>
-										
-									</mat-card>
-						  </ng-template>
-						</mat-tab>
-						<mat-tab label="Zakończone">
-						  <ng-template matTabContent>
-								<mat-card id="surveys-container">
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-										<mat-card class="survey-grid-item"></mat-card>
-
-									</mat-card>
-						  </ng-template>
-						</mat-tab>
-					  </mat-tab-group>
-
-			 
-			
+		
+		<div  id="form-container" fxLayout="column wrap" fxLayoutGap="1px grid" >
+			<!-- <div id="img" style='height: 100%; width: 100%; object-fit: contain'><img src="../../../assets/images/user-panel/user-test-image.jpg"></div>  -->
+			<div matTooltip="Przejdź do profilu" (click)="redirect(profile)" id="img" 
+			style="background-image: url('../../../assets/images/home/user.png'); 
+			background-size: cover; background-position: center; padding: 10px;">
 		</div>
+		<div id="user-row" fxLayout="column" fxLayoutGap="1px">
+			<p id="user-hint">Imie</p>
+			<p id="user-display">{{model.displayName}}</p>
+		</div>
+		<div id="user-row" fxLayout="column" fxLayoutGap="1px">
+			<p id="user-hint">E-mail</p>
+			<p id="user-display">{{model.email}}</p>
+		</div>
+		<div id="user-row" fxLayout="column" fxLayoutGap="1px">
+			
+			<p id="user-hint">Data dołączenia</p>
+			<p id="user-display">{{model.dateOfDeletion| date:'longDate'}}</p>
+		</div>
+		
 	</div>
+	
+	
+	
+</div>
+<div id="right-panel" fxFlex="75%">
+	<div fxLayout="row">
+		<mat-form-field id="search-field" appearance="outline">
+			<input matInput [(ngModel)]="searchText" type="text" placeholder="WYSZUKAJ..." name="name">
+		</mat-form-field>
+		<div matTooltip="Stwórz ankietę" (click)="redirecto(profile)" id="add_ico" style="background-image:url('../../../assets/images/home/plus.svg'); " ></div>
+	</div>
+	<div>		
+		<mat-tab-group >
+			<mat-tab label="Tworzone">
+				<ng-template matTabContent>
+					<mat-card id="surveys-container">
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						
+						
+					</mat-card>
+				</ng-template>
+			</mat-tab>
+			<mat-tab label="Trwające">
+				<ng-template matTabContent>
+					<mat-card id="surveys-container">
+						<app-panel-survey-item class="survey-grid-item" *ngFor="let survey of (surveys | search: searchText)"  >{{survey.title}}</app-panel-survey-item>
+						
+					</mat-card>
+				</ng-template>
+			</mat-tab>
+			<mat-tab label="Zakończone">
+				<ng-template matTabContent>
+					<mat-card id="surveys-container">
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						<mat-card class="survey-grid-item"></mat-card>
+						
+					</mat-card>
+				</ng-template>
+			</mat-tab>
+		</mat-tab-group>
+		
+	</div>
+</div>
 </div>

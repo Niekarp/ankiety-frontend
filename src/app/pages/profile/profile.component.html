@@ -2,53 +2,52 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-    <h1>Profil użytkownika</h1>
-    
-    
-      <div class="profile-details" *ngFor="let user of user.data">
-     
-        <table class="details-table" width="100%"  cellspacing="0" cellpadding="0">
-          
-          <tr>
-            <td width="250" id="user-data-info" >Nazwa użytkownika:</td>
-            <td id="user-data" width="100">
-                {{user.Name}}
-            </td>
-            <td width="270"></td>
-            <td >
-              
-                <img (click)="hidePassword()" width="150" height="150"  src="{{user.avatar}}">
-                
-            </td>
-          </tr>
-          <tr height="40">
-              <td id="user-data-info" width="250">Hasło: <a routerLink="/password_change">(Zmień)</a></td>
-              <td id="user-data" width="20" [hidden]="hidePassword" >
-                  {{user.password}}
-                </td>
-                <td id="user-data" [hidden]="!hidePassword">
-                    ********   
-                </td>
-                <td>
-                  <label style="height: 35px;padding-bottom: 30px" for="primary" class="btn btn-primary">Ukryj<input [(ngModel)]="hidePassword" type="checkbox" id="primary" class="badgebox"><span class="badge">OK</span></label>
-                </td>
-                <td>
-                    <button style="height: 50px;margin-left: 20px;" type="button" class="btn btn-primary">Zmień awatar</button>
-                </td>
-             
-          </tr>
-          <tr>
-            <td id="user-data-info">E-mail  <a routerLink="/email_change">(Zmień)</a></td>
-            <td colspan="2" id="user-data">przykladowymail@o2.pl</td>
-            <td></td>
-          </tr>
-          
-        </table>
-        <div class="wrapper">
-  <button class="delete" style="height:50px;width:150px;font-size: 17px;"  type="button" class="btn btn-danger">Usuń konto</button>
-</div>
-      
+<h1>Profil użytkownika</h1>
 
-    </div>
+
+<div class="profile-details" *ngFor="let user of user.data">
+  
+  <table class="details-table" width="100%"  cellspacing="0" cellpadding="0">
+    
+    <tr>
+      <td width="250" id="user-data-info" >Nazwa użytkownika:</td>
+      <td id="user-data" width="100">
+        {{user.Name}}
+      </td>
+      <td width="270"></td>
+      <td >
+        
+        <img (click)="hidePassword()" width="150" height="150"  src="{{user.avatar}}">
+        
+      </td>
+    </tr>
+    <tr height="40">
+      <td id="user-data-info" width="250">Hasło: <a routerLink="/password_change">(Zmień)</a></td>
+      <td id="user-data" width="20" [hidden]="hidePassword" >
+        {{user.password}}
+      </td>
+      <td id="user-data" [hidden]="!hidePassword">
+        ********   
+      </td>
+      <td>
+        <label style="height: 35px;padding-bottom: 30px" for="primary" class="btn btn-primary">Ukryj<input [(ngModel)]="hidePassword" type="checkbox" id="primary" class="badgebox"><span class="badge">OK</span></label>
+      </td>
+      <td>
+        <button style="height: 50px;margin-left: 20px;" type="button" class="btn btn-primary">Zmień awatar</button>
+      </td>
+      
+    </tr>
+    <tr>
+      <td id="user-data-info">E-mail  <a routerLink="/email_change">(Zmień)</a></td>
+      <td colspan="2" id="user-data">przykladowymail@o2.pl</td>
+      <td></td>
+    </tr>
+    
+  </table>
+  <div class="wrapper">
+    <button class="delete" style="height:50px;width:150px;font-size: 17px;"  type="button" class="btn btn-danger">Usuń konto</button>
+  </div>
+    
+</div>
 
 
