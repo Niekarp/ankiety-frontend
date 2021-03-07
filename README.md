@@ -24,7 +24,7 @@ Angular 2+, Angular Materials
 ## Gallery
 
 <img src="readme images/homepage.jpg">
-<img src="readme images/kreator0.png"
+<img src="readme images/kreator0.png">
 <img src="readme images/kreator2.jpg">
 <img src="readme images/list.png">
 <img src="readme images/kreator1.png">
