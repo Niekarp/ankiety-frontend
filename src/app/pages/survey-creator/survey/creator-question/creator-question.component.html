@@ -1,6 +1,6 @@
 <mat-card class="question-container mat-elevation-z4" fxLayout="column">
 	<mat-form-field>
-		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania" [readonly]="!editableQuestion">
+		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania" >
 	</mat-form-field>
 
 	<div *ngIf="(question.type !== QuestionTYPES.Text) && editableQuestion">
